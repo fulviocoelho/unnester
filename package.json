@@ -1,6 +1,6 @@
 {
   "name": "unnester",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a library to unnest objects",
   "keywords": [
     "javascript",
@@ -11,7 +11,7 @@
   "author": "Fulvio Coelho",
   "repository": {
     "type": "git",
-    "url": "git+"
+    "url": "git+https://github.com/fulviocoelho/unnester.git"
   },
   "homepage": "",
   "main": "build/index.js",

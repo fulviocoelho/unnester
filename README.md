@@ -2,6 +2,8 @@
 
 TavaScript library to unnest information from objectes.
 
+[Report Bug](https://github.com/fulviocoelho/unnester/issues)
+
 ## Node.js (Install)
 
 Requirements:
@@ -15,7 +17,7 @@ npm install unnester
 
 ### Usage
 
-ES6 import for typical API call signing use case:
+To import and use unnest import the function and pass the object as a parameter, according to the following example:
 
 ```javascript
 import {unnster} from 'unnester';
@@ -35,7 +37,24 @@ const person = {
 const unnested_object = await unnest(person);
 console.log(unnested_object);
 ```
+
+The expected output should be:
+```json
+{
+    name: 'Fernando',
+    age: 20,
+    address_street: 'Av. Marmota',
+    address_zip_code: 13685,
+    address_numbers_from: 1,
+    address_numbers_to: 100,
+}
+```
+
 ## Release notes
+
+### 1.0.2
+
+added use examples and issue link to readme
 
 ### 1.0.1
 
