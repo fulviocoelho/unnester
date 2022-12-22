@@ -15,6 +15,7 @@
   },
   "homepage": "",
   "main": "build/index.js",
+  "types": "build/index.d.js",
   "dependencies": {
     "tslib": "^2.4.1"
   },
@@ -25,9 +26,15 @@
     "test:cw": "nodemon --watch \"./**\" --ext \"ts\" --exec \"yarn test:cov\"",
     "dev-start": "ts-node-dev src/index.ts",
     "dev-start:w": "nodemon --watch \"src/**\" --ext \"ts\" --exec \"yarn dev-start\"",
-    "prepublish": "tsc",
+    "prepublish": "yarn build",
+    "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\"",
-    "lint": "tslint -p tsconfig.json"
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn test && yarn lint",
+    "preversion": "yarn lint",
+    "version" : "yarn format && git add -A src",
+    "postversion" : "git push && git push --tags"
   },
   "config": {
     "commitizen": {
